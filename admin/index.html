@@ -233,7 +233,7 @@
 		<div class="card-container">
 			<div class="success-message" id="successMsg"></div>
 			<div class="error-message" id="errorMsg"></div>
-
+<!--
 			<div class="header">
 				<div class="header-title">
 					<h1 id="pageTitle">加载中...</h1>
@@ -246,7 +246,38 @@
 					<button type="button" class="btn btn-primary" onclick="logout()">👋退出登录</button>
 				</div>
 			</div>
+-->
+						<!-- Northstar Custom Header -->
+			<!-- Northstar Custom Header -->
+			<div class="ns-header-wrapper">
+				<div class="ns-brand-area">
+					<div class="ns-live-badge">● LIVE · CONTROL CENTER</div>
+					<h1 class="ns-brand-title">NorthStarpanel</h1>
+					<div class="ns-brand-sub">NEXT-GEN EDGE ROUTING</div>
+					<div class="ns-systems">> all systems nominal <span style="color:var(--aqua)">✓</span></div>
+				</div>
+				<div class="ns-header-actions">
+					<button type="button" class="btn btn-mode-toggle" id="modeToggleBtn" onclick="toggleUserMode()" style="border: 1px solid var(--mint); color: var(--mint); background: transparent;">🐣 BEGINNER MODE</button>
+					<button type="button" class="btn btn-danger btn-reset" onclick="resetConfigWithConfirm()" style="background: var(--bronze);">⚠️ RESET CONFIG</button>
+					<button type="button" class="btn btn-primary" onclick="logout()" style="background: var(--bronze);">👋 LOG OUT</button>
+					<button type="button" class="btn ns-lang-btn" id="ns-html-lang-btn" style="border: 1px solid var(--mint); color: var(--mint); background: transparent;">🌐 EN</button>
+					<!-- Theme toggle will be moved here automatically -->
+				</div>
+			</div>
 
+			<!-- Northstar Marquee Bar -->
+			<div class="ns-marquee-container">
+				<div class="ns-marquee-content">
+					<span>Welcome to NorthStar Panel</span>
+					<span>FREE FOR ALL</span>
+					<span>EDGE-GRADE ROUTING</span>
+					<span>VLESS / TROJAN / SHADOWSOCKS</span>
+					<span>WEBSOCKET / gRPC / XHTTP</span>
+					<span>ECH READY</span>
+					<span>FINALMASK SUPPORT</span>
+					<span>SMART SUBSCRIPTIONS</span>
+				</div>
+			</div>
 			<!-- Cloudflare Workers/Pages 使用统计模块 -->
 			<div class="module cf-usage-module collapsed" id="cfUsageModule">
 				<div class="module-title" onclick="toggleModule(this)">
