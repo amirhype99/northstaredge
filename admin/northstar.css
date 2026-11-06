@@ -1,0 +1,81 @@
+/* =========================================
+   NORTHSTAR PANEL CUSTOM THEME
+   ========================================= */
+
+:root {
+  --galaxy-bg: #080b14;
+  --galaxy-panel: #111c33;
+  --mint: #00f5d4;
+  --aqua: #00e5ff;
+  --bronze: #cd7f32;
+  --bronze-hover: #b87333;
+}
+
+/* Force Dark Theme Colors */
+html.dark-mode body { background: var(--galaxy-bg) !important; color: #e2e8f0 !important; }
+html.dark-mode .card-container { background: transparent !important; }
+
+/* Fix Workers Usage Bar */
+.cf-progress-bar { background: #1e293b !important; height: 8px !important; border-radius: 4px !important; display: flex !important; overflow: hidden !important; }
+.cf-bar-green { background: var(--mint) !important; height: 100% !important; transition: width 0.3s; }
+.cf-bar-blue { background: var(--aqua) !important; height: 100% !important; transition: width 0.3s; }
+.cf-percentage-center { color: var(--aqua) !important; font-weight: bold !important; }
+.cf-stats-card { background: rgba(17, 28, 51, 0.8) !important; border: 1px solid #1e3a8a !important; }
+
+/* Buttons Override */
+.btn-primary { background: var(--bronze) !important; border: none !important; }
+.btn-primary:hover { background: var(--bronze-hover) !important; }
+
+/* --- HEADER LAYOUT --- */
+.ns-header-wrapper {
+  background: linear-gradient(135deg, #0d1526 0%, #1e1b4b 100%) !important;
+  border: 1px solid #1e3a8a !important; border-radius: 12px !important; padding: 20px !important; margin-bottom: 15px !important;
+  display: flex !important; justify-content: space-between !important; align-items: center !important; flex-wrap: wrap !important; gap: 15px !important;
+  position: relative !important; overflow: hidden !important; animation: nsFadeIn 1s ease-out !important;
+}
+.ns-brand-title { font-size: 28px !important; font-weight: 900 !important; color: #fff !important; margin: 0 !important; text-shadow: 0 0 10px rgba(0, 245, 212, 0.5) !important; }
+.ns-brand-sub { font-size: 11px !important; color: var(--aqua) !important; letter-spacing: 2px !important; font-weight: 600 !important; }
+.ns-live-badge { display: inline-block !important; background: rgba(0, 245, 212, 0.1) !important; color: var(--mint) !important; padding: 2px 8px !important; border-radius: 4px !important; font-size: 10px !important; border: 1px solid var(--mint) !important; margin-bottom: 5px !important; }
+.ns-systems { font-family: monospace !important; font-size: 12px !important; color: var(--mint) !important; margin-top: 5px !important; }
+
+/* --- MARQUEE LOOP --- */
+.ns-marquee-container { overflow: hidden !important; white-space: nowrap !important; background: #0d1526 !important; border: 1px solid #1e3a8a !important; border-radius: 8px !important; padding: 10px 0 !important; margin-bottom: 20px !important; display: flex !important; }
+.ns-marquee-content { display: inline-block !important; animation: nsMarquee 25s linear infinite !important; font-size: 12px !important; font-weight: 700 !important; color: var(--aqua) !important; letter-spacing: 1px !important; }
+.ns-marquee-content span { margin: 0 20px !important; }
+.ns-marquee-content span::after { content: '•' !important; margin-left: 20px !important; color: var(--mint) !important; }
+
+/* --- ISLAND MODULES & GLOWING EDGE --- */
+.module {
+  background: rgba(17, 28, 51, 0.6) !important;
+  border: 1px solid #1e3a8a !important;
+  border-radius: 12px !important; 
+  margin-bottom: 20px !important; 
+  position: relative !important;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease !important;
+  animation: nsFadeIn 0.8s ease-out !important;
+}
+
+/* The Glowing Right Edge */
+.module::after {
+  content: '' !important; position: absolute !important; top: 10px !important; right: -2px !important; bottom: 10px !important; width: 4px !important;
+  background: linear-gradient(to bottom, var(--mint), var(--aqua)) !important;
+  border-radius: 4px !important; opacity: 0.7 !important;
+  animation: nsColorShift 3s linear infinite alternate, nsFadeInOut 2s infinite alternate !important;
+}
+
+/* Hover Scale Effect */
+.module:hover, .module:focus-within {
+  transform: scale(1.08) !important; 
+  z-index: 50 !important;
+  box-shadow: 0 10px 30px rgba(0, 229, 255, 0.2), 0 0 15px rgba(0, 245, 212, 0.1) !important;
+  border-color: var(--aqua) !important;
+}
+
+/* RTL Fix for Edge */
+html[dir="rtl"] .module::after { right: auto !important; left: -2px !important; }
+
+/* --- ANIMATIONS --- */
+@keyframes nsMarquee { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+@keyframes nsColorShift { 0% { filter: hue-rotate(0deg); } 100% { filter: hue-rotate(30deg); } }
+@keyframes nsFadeInOut { 0% { opacity: 0.4; } 100% { opacity: 1; } }
+@keyframes nsFadeIn { 0% { opacity: 0; transform: translateY(10px); } 100% { opacity: 1; transform: translateY(0); } }
